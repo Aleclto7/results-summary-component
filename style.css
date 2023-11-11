@@ -129,18 +129,18 @@ main {
     margin-right: 10px;
     display: inline-block;
 }
-.reaction_icon {
+/* .icon_1 {
     background-image: url('../assets/icon-reaction.svg');
 }
-.memory_icon {
+.icon_2 {
     background-image: url('./assets/icon-memory.svg');
 }
-.verbal_icon {
+.icon_3 {
     background-image: url('./assets/icon-verbal.svg');
 }
-.visual_icon {
+.icon_4 {
     background-image: url('./assets/icon-visual.svg');
-}
+} */
 .reaction_element {
     background: hsla(0, 100%, 67%, 0.119);;
 }

@@ -9,7 +9,17 @@ const score1 = document.querySelector('.score_1')
 const score2 = document.querySelector('.score_2')
 const score3 = document.querySelector('.score_3')
 const score4 = document.querySelector('.score_4')
-let object;
+
+/* const getData = async() => {     // Traer datos del JSON a travez de promesa y asincronia
+    const response = await fetch("./data.json");
+    const data = await response.json();
+    console.log(data);
+
+    printName(data)
+    printImg(data)
+    printScore(data)
+}
+getData() */
 
 request.open('GET', requestURL);
 request.responseType = 'json'
@@ -18,12 +28,12 @@ request.onload = function () {
     const objectJson = request.response;
     object = objectJson;
 
-    printName()
+    printName(object)
     printImg(object)
-    printScore()
+    printScore(object)
 };
 
-function printName () {
+function printName (object) {
     let etiqueta1 = document.createElement('p')
     etiqueta1.innerHTML = object[0].category
     let etiqueta2 = document.createElement('p')
@@ -37,16 +47,14 @@ function printName () {
     cat2.appendChild(etiqueta2)
     cat3.appendChild(etiqueta3)
     cat4.appendChild(etiqueta4)
-    
-    console.log(object);
 }
-function printImg () {
+function printImg (object) {
     document.querySelector('.icon_1').src = object[0].icon;
     document.querySelector('.icon_2').src = object[1].icon;
     document.querySelector('.icon_3').src = object[2].icon;
     document.querySelector('.icon_4').src = object[3].icon;
 }
-function printScore () {
+function printScore (object) {
     let value1 = document.createElement('p')
     value1.innerHTML = object[0].score
     let value2 = document.createElement('p')
